@@ -1,0 +1,60 @@
+---
+- name: setup WireGuard for dn42
+  hosts: test
+  become: yes
+  tasks:
+  # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
+  - name: install WireGuard package
+    apt:
+      name: wireguard
+      state: present
+      update_cache: yes
+
+  - name: Find out what the remote machine's WireGuard privkey is
+    ansible.builtin.slurp:
+      src: /etc/wireguard/privatekey
+    register: server_privkey
+
+  - name: Find out what the remote machine's WireGuard pubkey is
+    ansible.builtin.slurp:
+      src: /etc/wireguard/publickey
+    register: server_pubkey
+
+
+  # https://docs.ansible.com/ansible/latest/collections/ansible/posix/sysctl_module.html
+  - name: enable and persist ip forwarding
+    sysctl:
+      name: net.ipv4.ip_forward
+      value: "1"
+      state: present
+      sysctl_set: yes
+      reload: yes
+
+  - include_vars:
+      file: "{{file}}"
+      name: wg_peers
+
+  - name: Create config files for WireGuard
+    template:
+      dest: /etc/wireguard/{{ item.name }}.conf
+      src: dn42.conf.j2
+      owner: root
+      group: root
+      mode: '0600'
+    loop: "{{ wg_peers.wg_peers }}"
+    register: wg_tunnel_tmpl
+
+  - name: Start and enable dn42 peers
+    systemd:
+      name: wg-quick@{{ item.name }}
+      enabled: yes
+      state: started
+    loop: "{{ wg_peers.wg_peers }}"
+
+
+  - name: "Restart changed WireGuard interfaces"
+    systemd:
+      name: wg-quick@{{ item.item.name }}
+      state: restarted
+    loop: "{{ (wg_tunnel_tmpl.results)
+            | selectattr('changed', 'true')}}"
