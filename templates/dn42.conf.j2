@@ -1,0 +1,13 @@
+[Interface]
+PrivateKey = {{ server_privkey['content'] | b64decode }}
+{% if item.peer_v4 is defined %}PostUp = /sbin/ip addr add dev %i {{ item.local_v4 }} peer {{ item.peer_v4 }}
+{% endif %}
+{% if item.peer_v6 is defined %}PostUp = /sbin/ip addr add dev %i {{ item.local_v6 }} peer {{ item.peer_v6 }}
+{% endif %}
+ListenPort = {{ item.port}}
+Table = off
+[Peer]
+{% if item.remote is defined %}Endpoint = {{ item.remote }}
+{% endif %}
+PublicKey = {{ item.wg_pubkey }}
+AllowedIPs = 0.0.0.0/0, ::0/0
