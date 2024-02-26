@@ -1,0 +1,20 @@
+---
+- name: setup bird2 peers for dn42
+  hosts: test
+  become: yes
+  tasks:
+  - include_vars:
+      file: "{{file}}"
+      name: wg_peers
+
+  - name: Create Bird2 peer file
+    template:
+      dest: /etc/bird/peers/{{ item.name }}.conf
+      src: peer.conf.j2
+      owner: bird
+      group: bird
+      mode: '0600'
+    loop: "{{ wg_peers.wg_peers }}"
+
+  - name: Execute the command in remote shell; stdout goes to the specified file on the remote
+    ansible.builtin.shell: birdc configure
