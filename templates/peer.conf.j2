@@ -1,0 +1,5 @@
+protocol bgp {{ item.name }} from dnpeers {
+    neighbor {{ item.peer_v6 }} % '{{ item.name }}' as {{ item.asn }};
+    {% if item.description is defined %}description "{{ item.description }}";
+    {% endif %}
+}
