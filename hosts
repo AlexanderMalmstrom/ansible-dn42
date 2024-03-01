@@ -1,3 +1,6 @@
+[test]
+172.20.12.227 file=conf/uk1.yml
+
 [routers]
 #de1
 172.20.12.226 file=conf/de1.yml

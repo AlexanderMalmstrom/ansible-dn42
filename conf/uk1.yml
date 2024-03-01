@@ -19,3 +19,29 @@ wg_peers:
   local_v4: 172.20.12.227/32
   local_v6: fe80::abcd/64
   asn: 4242423088
+
+- name: dn42_kioubit
+  port: 21525
+  remote: "uk1.g-load.eu:21525"
+  wg_pubkey: "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8="
+  #peer_v4: "172.21.100.197/32"
+  peer_v6: "fe80::ade0"
+  #local_v4: 172.20.12.227/32
+  local_v6: fe80::134:c9db
+  asn: 4242423914
+  description: "dn42.g-load.eu"
+
+
+- name: dn42_frkioubit
+  #port: 21525
+  remote: "fr1.g-load.eu:21525"
+  wg_pubkey: "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8="
+  #peer_v4: "172.21.100.197/32"
+  peer_v6: "fe80::ade0"
+  #local_v4: 172.20.12.227/32
+  local_v6: "fe80::ade1"
+  asn: 4242423914
+  description: "dn42.g-load.eu"
+
+
+
