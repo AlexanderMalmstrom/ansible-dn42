@@ -4,7 +4,8 @@ PrivateKey = {{ server_privkey['content'] | b64decode }}
 {% endif %}
 {% if item.peer_v6 is defined %}PostUp = /sbin/ip addr add dev %i {{ item.local_v6 }} peer {{ item.peer_v6 }}
 {% endif %}
-ListenPort = {{ item.port}}
+{% if item.port is defined %}ListenPort = {{ item.port }}
+{% endif %}
 Table = off
 [Peer]
 {% if item.remote is defined %}Endpoint = {{ item.remote }}
