@@ -30,8 +30,6 @@ wg_peers:
   local_v6: fe80::ade1
   asn: 4242423914
   description: "dn42.g-load.eu"
-  mp-bgp: true
-
 
 
 
