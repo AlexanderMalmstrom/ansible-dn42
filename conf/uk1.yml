@@ -14,10 +14,10 @@ wg_peers:
   port: 53088
   remote: "lon1-uk.dn42.6700.cc:21525"
   wg_pubkey: "hYIX+Ea/2h0rL7OY0yahjN+DJZlOaokymoDG8UW1kyg="
-  peer_v4: "172.21.100.197/32"
+  peer_v4: "172.21.100.197"
   peer_v6: "fe80::3088:197"
-  local_v4: 172.20.12.227/32
-  local_v6: fe80::abcd/64
+  local_v4: 172.20.12.227
+  local_v6: fe80::abcd
   asn: 4242423088
 
 - name: dn42_kioubit
