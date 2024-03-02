@@ -1,5 +1,5 @@
 wg_peers:
-- name: dn42-kioubit
+- name: dn42_kioubit
   remote: "de2.g-load.eu:21525"
   wg_pubkey: "B1xSG/XTJRLd+GrWDsB06BqnIq8Xud93YVh/LYYYtUY="
   #peer_v4: 172.20.53.97
@@ -10,7 +10,7 @@ wg_peers:
   description: "https://dn42.g-load.eu/"
 
 
-- name: dn42-whojk
+- name: dn42_whojk
   remote: "de.vm.whojk.com:24021"
   wg_pubkey: "rS+EVSpHhBW7nXv0m/Vw2I/tujwZUEyxZmV51k7Wkzw="
   peer_v4: 172.20.12.249
