@@ -2,13 +2,13 @@ wg_peers:
 - name: dn42_routedbits
   remote: "router.sto1.routedbits.com:51525"
   wg_pubkey: "Mt8n9S99KDIlj5cbAc7P/6SFcMfbenQJk9RsqoPQjzo="
-  peer_v6: "fe80::ade0"
-  local_v6: "fe80::207"
+  peer_v6: "fe80::207"
+  local_v6: "fe80::1525"
   asn: 4242420207
   description: "https://dn42.routedbits.com"
 
 - name: dn42_C4TG1RL5
-  wg_pubkey: "Mt8n9S99KDIlj5cbAc7P/6SFcMfbenQJk9RsqoPQjzo="
+  wg_pubkey: "LdRmKftKq4wjBojbcHUaq6aMJPTDqxvOD1e1PVYSg0Y="
   port: 51411
   peer_v6: "fe80::1411:3"
   local_v6: "fe80::1525"
