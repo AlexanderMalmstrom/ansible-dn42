@@ -11,6 +11,6 @@ wg_peers:
   remote: "de.vm.whojk.com:24021"
   wg_pubkey: "rS+EVSpHhBW7nXv0m/Vw2I/tujwZUEyxZmV51k7Wkzw="
   peer_v6: "fe80::2717"
-  local_v6: "fe80::1337/"
+  local_v6: "fe80::1337"
   asn: 4242422717
   description: "https://net.whojk.com/"
