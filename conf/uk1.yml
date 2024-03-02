@@ -1,9 +1,7 @@
 wg_peers:
 - name: dn42_inferior
   port: 50129
-  #remote: "[2a01:e0a:5f9:9681::35]:21080"
   wg_pubkey: "ifW+1tgOE6Ss4cjin/HV/CBTk62NrTZkPXWF0/aAmRU="
-  #peer_v4: null
   peer_v6: "fe80::129:c9db"
   local_v4: 172.20.229.116
   local_v6: fe80::134:c9db
@@ -24,9 +22,7 @@ wg_peers:
   port: 21525
   remote: "uk1.g-load.eu:21525"
   wg_pubkey: "sLbzTRr2gfLFb24NPzDOpy8j09Y6zI+a7NkeVMdVSR8="
-  #peer_v4: "172.21.100.197/32"
   peer_v6: "fe80::ade0"
-  #local_v4: 172.20.12.227/32
   local_v6: fe80::ade1
   asn: 4242423914
   description: "dn42.g-load.eu"
