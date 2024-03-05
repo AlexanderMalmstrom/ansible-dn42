@@ -14,3 +14,11 @@ wg_peers:
   local_v6: "fe80::1337"
   asn: 4242422717
   description: "https://net.whojk.com/"
+
+- name: dn42_TECH9
+  remote: "de-fra02.dn42.tech9.io:52533"
+  wg_pubkey: "MD1EdVe9a0yycUdXCH3A61s3HhlDn17m5d07e4H33S0="
+  peer_v6: "fe80::1588"
+  local_v6: "fe80::100"
+  asn: 4242421588
+  description: "https://www.chrismoos.com/dn42-peering/"
