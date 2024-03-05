@@ -22,3 +22,12 @@ wg_peers:
   local_v6: "fe80::100"
   asn: 4242421588
   description: "https://www.chrismoos.com/dn42-peering/"
+
+- name: dn42_kskb
+  remote: "4.de.kskb.eu.org:21525"
+  port: "51817"
+  wg_pubkey: "Sxn9qXnzu3gSBQFZ0vCh5t5blUJYgD+iHlCCG2hexg4="
+  peer_v6: "fe80::1817"
+  local_v6: "fe80::100"
+  asn: 4242421817
+  description: "https://dn42.kskb.eu.org/"
