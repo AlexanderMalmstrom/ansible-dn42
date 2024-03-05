@@ -1,6 +1,6 @@
 ---
 - name: setup bird2 peers for dn42
-  hosts: test
+  hosts: routers
   become: yes
   tasks:
   - include_vars:

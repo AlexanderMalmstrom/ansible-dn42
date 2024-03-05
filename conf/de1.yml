@@ -28,6 +28,6 @@ wg_peers:
   port: "51817"
   wg_pubkey: "Sxn9qXnzu3gSBQFZ0vCh5t5blUJYgD+iHlCCG2hexg4="
   peer_v6: "fe80::1817"
-  local_v6: "fe80::100"
+  local_v6: "fe80::1525"
   asn: 4242421817
   description: "https://dn42.kskb.eu.org/"
