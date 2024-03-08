@@ -23,7 +23,15 @@ for router in dir_list:
         peers = peers['wg_peers']
         for peer in peers:
             for key, value in peer.items():
-                #print(key)
+                print(key, value)
                 if key not in legalKeys:
                     print("Oh nose,", key, "isnt an leagal key")
                     exit(1)
+                if(key == "port"):
+                    if 50000 <= value <= 59999:
+                        print("Port is Valid")
+                    else:
+                        exit(1)
+
+                
+                
