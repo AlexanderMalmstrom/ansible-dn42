@@ -1,0 +1,16 @@
+kind: pipeline
+type: docker
+name: pull-checks
+
+steps:
+- name: prcheck
+  image: python:3.9
+  commands:
+   - echo "A PR was created"
+   - pip install pyyaml
+   - python checker.py
+trigger:
+  branch:
+  - main
+  event:
+  - pull_request
