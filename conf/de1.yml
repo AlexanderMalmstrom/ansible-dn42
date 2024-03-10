@@ -41,3 +41,12 @@ wg_peers:
   local_v6: "fe80::1525"
   asn: 4242422189
   description: "https://dn42.kuu.moe"
+
+- name: dn42_lare
+  port: 53035
+  remote: "de02.dn42.lare.cc:21525"
+  wg_pubkey: "dwtxXvpgWCGtX/QKFDaLXsWYRPd08Tg1JGsvzLudgjw="
+  peer_v6: "fe80::3035:131"
+  local_v6: fe80::1525
+  asn: 4242423035
+  description: "https://dn42.lare.cc/"
