@@ -35,3 +35,11 @@ wg_peers:
   asn: 4242421080
   description: "https://highdef.network"
 
+- name: dn42_lare
+  port: 53035
+  remote: "uk01.dn42.lare.cc:21525"
+  wg_pubkey: "RJaU1kRfiOREvKihiDMFpNrEGpN8td3z+UvHxabOlR0="
+  peer_v6: "fe80::3035:138"
+  local_v6: fe80::1525
+  asn: 4242423035
+  description: "https://dn42.lare.cc/"
