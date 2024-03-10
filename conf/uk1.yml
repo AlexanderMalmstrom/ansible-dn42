@@ -15,6 +15,7 @@ wg_peers:
   peer_v6: "fe80::3088:197"
   local_v6: fe80::abcd
   asn: 4242423088
+  description: "peer.dn42.6700.cc"
 
 - name: dn42_kioubit
   port: 21525
