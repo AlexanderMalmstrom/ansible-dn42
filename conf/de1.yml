@@ -31,3 +31,12 @@ wg_peers:
   local_v6: "fe80::1525"
   asn: 4242421817
   description: "https://dn42.kskb.eu.org/"
+
+- name: dn42_iEdon
+  remote: "de-fra.dn42.kuu.moe:53174"
+  port: "52189"
+  wg_pubkey: "FHp0OR4UpAS8/Ra0FUNffTk18soUYCa6NcvZdOgxY0k="
+  peer_v6: "fe80::2189:e9"
+  local_v6: "fe80::1525"
+  asn: 4242422189
+  description: "https://dn42.kuu.moe"
