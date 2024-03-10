@@ -7,7 +7,7 @@ steps:
   image: python:3.9
   commands:
    - echo "A PR was created"
-   - pip install pyyaml
+   - pip install -r requirements.txt
    - python checker.py
 trigger:
   branch:
