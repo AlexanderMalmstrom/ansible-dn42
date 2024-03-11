@@ -8,26 +8,6 @@ import requests
 
 KNOWN_ROUTER_FILES = ["de1.yml", "se1.yml", "uk1.yml"]
 
-if __name__ == "__main__":
-    for file in os.listdir("conf"):
-        if file not in KNOWN_ROUTER_FILES:
-            print(f"Unknown file '{file}', skipping")
-            continue
-
-        print(file)
-
-        with open(f"conf/{file}", 'r', encoding="utf-8") as config:
-            peers = yaml.safe_load(config)
-            for peer in peers["wg_peers"]:
-                try:
-                    validate_peer_config(peer)
-                except Exception as e:
-                    print("Peer config validation:", e)
-                    sys.exit(1)
-
-    print("Valid configuration")
-    sys.exit(0)
-
 # Check if an ASN exists
 def asn_exists(asn):
     r = requests.get(f"https://explorer.burble.com/api/registry/aut-num/AS{asn}", timeout=10)
@@ -71,3 +51,23 @@ def validate_peer_config(config):
 
     if config.has_key("asn") and not asn_exists(config["asn"]):
         raise Exception("Invalid asn")
+
+if __name__ == "__main__":
+    for file in os.listdir("conf"):
+        if file not in KNOWN_ROUTER_FILES:
+            print(f"Unknown file '{file}', skipping")
+            continue
+
+        print(file)
+
+        with open(f"conf/{file}", 'r', encoding="utf-8") as config:
+            peers = yaml.safe_load(config)
+            for peer in peers["wg_peers"]:
+                try:
+                    validate_peer_config(peer)
+                except Exception as e:
+                    print("Peer config validation:", e)
+                    sys.exit(1)
+
+    print("Valid configuration")
+    sys.exit(0)
