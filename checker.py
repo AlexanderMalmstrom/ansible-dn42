@@ -15,41 +15,41 @@ def asn_exists(asn):
 
 # Validates used keys of a peer config
 def validate_peer_config(config):
-    if not config.has_key("name") or not config["name"]:
+    if not "name" in config or not config["name"]:
         raise Exception("Missing name")
 
     if not config["name"].startswith("dn42_"):
         raise Exception("Invalid name")
 
-    if not config.has_key("name") or not config["remote"]:
+    if not "name" in config or not config["remote"]:
         raise Exception("Missing remote")
 
-    if not config.has_key("remote") or not config["remote"]:
+    if not "remote" in config or not config["remote"]:
         raise Exception("Missing remote")
 
     remote = config["remote"].partition(":")[0]
     if not validators.domain(remote) or validators.ipv4(remote) or validators.ipv6(remote):
         raise Exception("Invalid remote")
 
-    if not config.has_key("local_v6") and not config.has_key("local_v4"):
+    if not "local_v6" in config and not "local_v4" in config:
         raise Exception("Missing one of local_v4, local_v6")
 
-    if config.has_key("local_v6") and not validators.ipv6(config["local_v6"]):
+    if "local_v6" in config and not validators.ipv6(config["local_v6"]):
         raise Exception("Invalid local_v6")
 
-    if config.has_key("local_v4") and not validators.ipv4(config["local_v4"]):
+    if "local_v4" in config and not validators.ipv4(config["local_v4"]):
         raise Exception("Invalid local_v4")
 
-    if not config.has_key("peer_v6") and not config["peer_v4"]:
+    if not "peer_v6" in config and not "peer_v4" in config:
         raise Exception("Missing peer_v4 or peer_v6")
 
-    if config.has_key("peer_v6") and not validators.ipv6(config["remote_v6"]):
+    if "peer_v6" in config and not validators.ipv6(config["remote_v6"]):
         raise Exception("Invalid peer_v6")
 
-    if config.has_key("peer_v4") and not validators.ipv4(config["remote_v4"]):
+    if "peer_v4" in config and not validators.ipv4(config["remote_v4"]):
         raise Exception("Invalid peer_v4")
 
-    if config.has_key("asn") and not asn_exists(config["asn"]):
+    if "asn" in config and not asn_exists(config["asn"]):
         raise Exception("Invalid asn")
 
 if __name__ == "__main__":
