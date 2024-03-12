@@ -19,6 +19,6 @@ wg_peers:
   remote: "edge0.sesto2.dn42.welterde.net:42001"
   port: 41691
   wg_pubkey: "LdRmKftKq4wjBojbcHUaq6aMJPTDqxvOD1e1PVYSg0Y="
-  peer_v6: "fe80::2:fcde:3715/64,fdef:5d0d:ee12:0:7:13:fcde:3715"
+  peer_v6: "fe80::2:fcde:3715"
   local_v6: "fe80::1337"
   asn: 64738
