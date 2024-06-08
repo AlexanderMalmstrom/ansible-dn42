@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
         print(file)
 
-        with open(f"conf/{file}", 'r', encoding="utf-8") as config:
+        with open(f"conf/router/{file}", 'r', encoding="utf-8") as config:
             peers = yaml.safe_load(config)
             for peer in peers["wg_peers"]:
                 try:
