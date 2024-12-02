@@ -11,11 +11,13 @@
   #    update_cache: yes
 
   - name: Find out what the remote machine's WireGuard privkey is
+    become: yes
     ansible.builtin.slurp:
       src: /etc/wireguard/privatekey
     register: server_privkey
 
   - name: Find out what the remote machine's WireGuard pubkey is
+    become: yes
     ansible.builtin.slurp:
       src: /etc/wireguard/publickey
     register: server_pubkey
