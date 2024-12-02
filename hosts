@@ -4,8 +4,8 @@
 
 [routers]
 #de1
-172.20.12.226 file=conf/de1.yml
+172.20.12.226 file=conf/router/de1.yml
 #se1
-172.20.12.225 file=conf/se1.yml
+172.20.12.225 file=conf/router/se1.yml
 #uk1
-172.20.12.227 file=conf/uk1.yml
+172.20.12.227 file=conf/router/uk1.yml
