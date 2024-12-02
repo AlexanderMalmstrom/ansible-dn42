@@ -1,7 +1,7 @@
 ---
 - name: setup WireGuard for dn42
   hosts: routers
-  become: yes
+  become: root
   tasks:
   # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
   # - name: install WireGuard package
@@ -11,13 +11,11 @@
   #    update_cache: yes
 
   - name: Find out what the remote machine's WireGuard privkey is
-    become: yes
     ansible.builtin.slurp:
       src: /etc/wireguard/privatekey
     register: server_privkey
 
   - name: Find out what the remote machine's WireGuard pubkey is
-    become: yes
     ansible.builtin.slurp:
       src: /etc/wireguard/publickey
     register: server_pubkey
